@@ -1,0 +1,33 @@
+*{margin:0px;
+	padding:0px;}
+
+	.title{width:400px;
+		height:70px;
+		margin:0 auto;
+		padding-top:30px;
+		text-align: center;
+		font-size: 24px;
+		font-weight: bold;
+		color:#F00;
+		}
+
+		.btns{width:185px;
+			height:30px;
+			margin:0 auto;
+			
+			top:100px;
+			left:500px;}
+			.btns span{display: block;
+				float: left;
+				width:80px;
+				height:27px;
+				line-height: 25px;
+				background: #036;
+				text-align: center;
+				margin-right:10px;
+				border:1px solid #eee;
+				border-radius:7px;
+				font-size:14px;
+				color:#fff;
+				font-family: "微软雅黑";
+			    cursor:pointer;}

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GET和POST有什么区别？</title>
+	<link rel="stylesheet" type="text/css" href="css/normallize.css"> 
+	<link rel="stylesheet" type="text/css" href="css/main.css"> 
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="header_wrapper articl">
+		<header class="animated fadeInTop"><!-- 页头开始 -->
+			<nav>
+				<div class="logo"><a href="index.html"><img src="image/阿呆喵.png"></a></div>
+				<div class="logo_menu" id="logo_menu"><a href="#" class="sidebar_trigger">MENU<i class="fa fa-bars"></i></a> </div>
+				<div class="hideLogo">
+					<ul>
+					<li><a href="https://silentwars.github.io/MyResume">个人简历</a></li>
+					<li><a href="Viewport的深入了解.html">最新文章</a></li>
+					<li><a href="articl1.html" >Blog</a></li>
+					<li><a href="index.html" id="active">首页</a></li>
+				</ul>
+				</div>
+			</nav>
+		</header><!-- 页头结束 -->
+		<div class="content clearfix"><!-- 内容开始 -->	
+			<div class="content_left animated fadeInLeft fl">
+				<div class="article_list_title">
+					<h4>GET和POST有什么区别？</h4>
+				</div>
+				<div class="hr_15"></div>
+				<div class="see_data">
+					<ul>
+						<li><a title="陈明2017-06-27发表"><i class="fa fa-clock-o"></i>2017-06-27</a></li>
+						<li><a href="#" title="作者:陈明"><i class="fa fa-user"></i>陈明</a></li>
+						<li><a href="#" title="已有0条评论"><i class="fa fa-commenting"></i>0</a></li>
+						<li><a href="#" title="已有5次浏览"><i class="fa fa-eye"></i>5</a></li>
+						<li class="li_right"><a href="#" title="查看分类"><i class="fa fa-bars"></i>web开发</a></li>
+					</ul>
+				</div>
+				<div class="hr_15"></div>
+				<div class="article_list_content">
+
+					<!-- <div class="detailed_content">
+						<img src="image/web-Front -end.jpg">
+					</div>	 -->
+					<h3>GET和POST有什么区别？</h3>
+					<p>如果有人问你，<span style="font-weight: bold;">GET和POST，有什么区别？你会如何回答？</span></p>
+					<h4>我的经历</h4>
+					<p><span style="font-weight: bold;"></span></p>
+					<p>前几天有人问我这个问题。我说GET是用于获取数据的，POST，一般用于将数据发给服务器之用。这个答案好像并不是他想要的。于是他继续追问有没有别的区别？我说这就是个名字而已，如果服务器支持，他完全可以把GET改个名字叫GET2。他反问道，那就是单纯的名字上的区别喽？我想了想，我觉得如果说再具体的区别，只能去看RFC文档了，还<span style="font-weight: bold;">要取决于服务器（指Apache，IIS）的具体实现</span>。但我不得不承认，我的确没有仔细看过HTTP的RFC文档。于是我说，我对HTTP协议不太熟悉。这个问题也就结束了。</p>
+						<h4>最普遍的答案</h4>
+						<p>回来之后寻思了很久，他到底是想问我什么？我一直就觉得GET和POST没有什么除了语义之外的区别，自打我开始学习Web编程开始就是这么理解的。</p>
+						<p>可能很多人都已经猜到了，他要的答案是：</p>
+						<p>1. GET使用URL或Cookie传参。而POST将数据放在BODY中。</p>
+						<p>2. GET的URL会有长度上的限制，则POST的数据则可以非常大。</p>
+						<p>3. POST比GET安全，因为数据在地址栏上不可见。</p>
+						<p>但是很不幸，<span style="font-weight: bold;">这些区别全是错误的</span>，更不幸的是，<a href="https://www.google.com/search?q=get%E5%92%8Cpost%E7%9A%84%E5%8C%BA%E5%88%AB&ie=utf-8&oe=utf-8&aq=t&rls=org.mozilla:zh-CN:official&client=firefox-a&channel=fflb" style="color:#227AE8;">这个答案还是Google搜索的头版头条</a>，然而我根本没想着这些是答案，因为在我看来他们都是错的。我来一一解释一下。</p>
+						<h4>GET和POST与数据如何传递没有关系</h4>
+						<p>GET和POST是由<a href="https://www.w3.org/Protocols/rfc2616/rfc2616.html" style="color:#227AE8;">HTTP协议定义</a> 的。在HTTP协议中，Method和Data(URL, Body, Header)是正交的两个概念，也就是说，<span style="font-weight: bold;">使用哪个Method与应用层的数据如何传输是没有相互关系的。</span></p>
+						<p>HTTP没有要求，如果Method是POST数据就要放在BODY中。也没有要求，如果Method是GET，数据（参数）就一定要放在URL中而不能放在BODY中。</p>
+						<p>那么，网上流传甚广的这个说法是从何而来的呢？我在<a href="https://www.w3.org/TR/REC-html40/interact/forms.html#h-17.13.1" style="color:#227AE8;">HTML标准中，找到了相似的描述</a> 。这和网上流传的说法一致。但是这只是HTML标准对HTTP协议的用法的约定。怎么能当成GET和POST的区别呢？</p>
+						<p>而且，现代的Web Server都是支持GET中包含BODY这样的请求。虽然这种请求不可能从浏览器发出，但是现在的Web Server又不是只给浏览器用，已经完全地超出了HTML服务器的范畴了。</p>
+						<p>知道这个有什么用？我不想解释了，有时候就得自己痛一次才记得住。</p>
+						<h4>HTTP协议对GET和POST都没有对长度的限制</h4>
+						<p>HTTP协议明确地指出了，HTTP头和Body都没有长度的要求。而对于URL长度上的限制，有两方面的原因造成：</p>
+						<p>1. 浏览器。据说早期的浏览器会对URL长度做限制。据说IE对URL长度会限制在2048个字符内（流传很广，而且无数同事都表示认同）。但我自己试了一下，我构造了90K的URL通过IE9访问live.com，是正常的。网上的东西，哪怕是Wikipedia上的，也不能信。</p>
+						<p>2. 服务器。URL长了，对服务器处理也是一种负担。原本一个会话就没有多少数据，现在如果有人恶意地构造几个几M大小的URL，并不停地访问你的服务器。服务器的最大并发数显然会下降。另一种攻击方式是，把告诉服务器Content-Length是一个很大的数，然后只给服务器发一点儿数据，嘿嘿，服务器你就傻等着去吧。哪怕你有超时设置，这种故意的次次访问超时也能让服务器吃不了兜着走。有鉴于此，多数服务器出于安全啦、稳定啦方面的考虑，会给URL长度加限制。但是这个限制是针对所有HTTP请求的，与GET、POST没有关系。</p>
+						安全不安全和GET、POST没有关系
+						<p>我觉得这真是中国特色。我讲个小段子，大家应该可以体会出这个说法多么的可笑。
+							　　觉得POST数据比GET数据安全的人会说
+							　　“防君子不防小人；中国小白多，能防小白用户就行了。”
+							　　“哼，”我不以为然，“那你怎么不说，URL参数都Encode过了，或是Base64一下，小白也看不懂啊。”
+							那人反驳道，“Encode太简单了，聪明点儿的小白很容易就可以Decode并修改掉。”
+							　　我笑道，“五十步笑百步耳，再聪明点儿的小白还会截包并重发呢，Opera就有这功能。”
+							　　那人阴险地祭出神器——最终解释权，说，“这个不算小白。”</p>
+						<h4>最后一点儿感想</h4>
+						<p>我之前一直做Windows桌面应用，对Web开发无甚了解，直到一年多前转做服务器端开发，才开始接触到HTTP。（注意，我说的是HTTP，不是HTML。服务器开放接口是基于REST理念设计的，使用的协议是HTTP，但是传输的内容不是HTML。这不是Web Server，而是一个Web Service）</p>
+						<p>所以我对于GET和POST的理解，是纯粹地来源于HTTP协议。他们只有一点根本区别，简单点儿说，一个用于获取数据，一个用于修改数据。具体的请参考RFC文档。</p>
+						<p>如果一个人一开始就做Web开发，很可能把HTML对HTTP协议的使用方式，当成HTTP协议的唯一的合理使用方式。从而犯了以偏概全的错误。</p>
+						<p>可能有人会觉得我钻牛角尖。我只是不喜欢模棱两可，不喜欢边界不清、概念不明，不喜欢“拿来主义”，也不喜欢被其它喜欢钻牛角尖的人奚落得无地自容。</p>
+						<p>“知之为知之，不知为不知，是知也。”</p>
+						<p>转载：<a href="http://kb.cnblogs.com/page/188928/">http://kb.cnblogs.com/page/188928/</a></p>
+							<div class="article_list_link">
+								<ul class="reward_sharing">
+									<li><a href="#" title="打赏">打赏</a></li>
+									<li><a href="#" title="分享">分享</a></li>
+								</ul>
+								<ul class="list_link_lable">
+									<li><a href="#">web</a></li>
+									<li><a href="#">前端</a></li>
+									<li><a href="#">学习</a></li>
+								</ul>
+							</div>					
+						</div>
+						<div class="hr_15"></div>
+						<div class="upper_part">
+							<ul>
+							    <li><i class="fa fa-arrow-up"></i><span>上一篇：</span><a href="什么是对象，为什么要面向对象，怎么才能面向对象？.html">什么是对象，为什么要面向对象，怎么才能面向对象？</a></li>
+								<li><i class="fa fa-arrow-down"></i><span>下一篇：</span><a href="闭包简单理解.html">闭包简单理解</a></li>
+							</ul>				
+						</div>
+						<div class="hr_15"></div>
+						<div class="related_like">
+							<h4 class="shareside_title"><i class="fa fa-heart"></i>您还喜欢<small>You also like</small></h4>
+						</div>
+						<div class="hr_15"></div>
+						<div class="related_like_list">
+							<ul class="clearfix">
+								<li><a href="闭包简单理解.html"><img src="image/articl_img11.jpg"></a><a href="闭包简单理解.html">闭包简单理解</a></li>
+		                        <li><a href="阻止事件冒泡和默认事件.html"><img src="image/articl_img07.jpg"></a><a href="阻止事件冒泡和默认事件.html">阻止事件冒泡和默认事件</a></li>
+		                        <li><a href="HTML5和CSS3新增特性.html"><img src="image/articl_img04.jpg"></a><a href="HTML5和CSS3新增特性">HTML5和CSS3新增特性</a></li>
+		                        <li><a href="一个网站的开发流程.html"><img src="image/articl_img09.jpg"></a><a href="一个网站的开发流程.html">一个网站的开发流程</a></li>
+							</ul>
+						</div>
+						<div class="hr_15"></div>
+						<div class="comment">
+							<a href="#"><img src="image/comment.jpg"></a>
+							<form>
+								<div class="textarea-wrapper">
+									<textarea placeholder="说点什么吧...."></textarea>
+									<pre ></pre>
+								</div>
+								<div class="post-toolbar">
+									<div class="post-options"><span></span></div>
+									<button class="post-button" type="submit">发布</button>
+								</div>
+
+							</form>
+						</div>
+					</div><!-- content_left结束 -->
+					<div class="content_right animated fadeInRight fr">
+						<div class="shareside">
+							<h4 class="shareside_title"><i class="fa fa-heart"></i>关注我<small>Focus me</small></h4>
+							<div class="share_model">
+								<ul class="clearfix">
+									<li><a href="#" title="我的微博主页" class="link_sina"></a><span>新浪微博</span></li>
+									<li><a href="#" title="Qzone" class="link_qzone"></a><span>QQ空间</span></li>
+									<li id="link_share"><a href="#" title="分享" class="link_forward"></a><span>点击分享</span></li>
+									<li><a href="#" title="点击,关注我" class="link_focus"></a><span>关注我</span></li>
+								</ul>
+							</div>
+							<div class="share_link_list" id="share_link_list">
+								<i class="fa fa-close" id="fa-close"></i>
+								<ul class="clearfix">
+									<li><a href="#" class="share_link_weixin" title="分享到微信" ></a></li>
+									<li><a href="#" class="share_link_sina" title="分享到微博" ></a></li>
+									<li><a href="#" class="share_link_qzone" title="分享到QQ空间"></a></li>
+									<li><a href="#" class="share_link_baidubar" title="分享到百度贴吧"></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="hr_15"></div>
+						<div class="web-author">
+							<div class="author-tx">
+								<a href="#" title="点击查看详情"><img src="image/author.png"></a>
+							</div>
+							<div class="about-author">
+								<span style="color:#DAA91D;">陈  明</span><br>
+								<span style="font-size: 13px;color:#DAA91D;">走向web前端开发工师的路上</span>
+							</div>
+							<div class="data-info">
+								<ul class="clearfix">
+									<li><strong>60</strong><span>运行天数</span></li>
+									<li><strong>2</strong><span>今日访问ip</span></li>
+									<li><strong>8</strong><span>今日访客</span></li>
+								</ul>	
+							</div>
+						</div><!-- web-author结束 -->
+						<div class="hr_15"></div>
+						<form  class="search">
+							<div class="search-box clearfix">
+								<input type="text" placeholder="请输入关键字" onfocus="this.placeholder=''" onblur="this.placeholder='请输入关键字'" />
+								<button></button>
+								<i class="fa fa-search"></i>
+							</div>
+						</form>	
+						<div class="hr_15"></div>
+						<div class="close-new">
+							<h4><i class="fa fa-newspaper-o"></i>最近更新<small>Close New</small></h4>
+							<ul>
+								<li><span><i class="fa fa-sticky-note"></i>最近：<font>陈明</font>&nbsp;&nbsp;2017-06-27</span>&nbsp;&nbsp;<a href="#">更新了<b class="lable">文章</b></a></li>
+								<li><i class="fa fa-calendar"></i>历史上的今天：<a href="#" title="历史上的今天" class="orange-text">历史上的今天</a></li>
+								<li><i class="fa fa-clock-o"></i>2017年已经过去：<a href="#" title="2017年已经过去" class="orange-text"  id="downtime"></a></li>
+							</ul>
+						</div>
+						<div class="hr_15"></div>
+						<div class="recommend">
+							<h4 class="shareside_title"><i class="fa fa-tags"></i>热门推荐</h4>
+							<ul class="recommend_title clearfix">
+								<li class="re_active recommend_title_left">热门推荐</li>
+								<li class="recommend_title_right">最新文章</li>
+							</ul>
+							<div class="recommend_l">
+								<ul class="recommend_left">
+									<li><a href="GET和POST有什么区别？.html">GET和POST有什么区别？</a></li>
+							<li><a href="关于响应式布局.html">关于响应式布局</a></li>
+							<li><a href="HTML5和CSS3新增特性.html">HTML5和CSS3新增特性</a></li>
+							<li><a href="一个网站的开发流程.html">一个网站的开发流程</a></li>
+							<li><a href="闭包简单理解.html">闭包简单理解</a></li>
+							<li class="no_border"><a href="专业web前端人员应注意的几点细节.html">专业web前端人员应注意的几点细节</a></li>
+								</ul> 
+							</div>
+							<div class="recommend_r">
+								<ul  class="recommend_right">
+									<li><a href="GET和POST有什么区别？.html">GET和POST有什么区别？</a></li>
+							<li><a href="闭包简单理解.html">闭包简单理解</a></li>
+							<li><a href="关于响应式布局.html">关于响应式布局</a></li>
+							<li><a href="web前端工程师学习路径.html">web前端工程师学习路径</a></li>
+							<li class="no_border"><a href="浅谈html5和html的区别.html">浅谈html5和html的区别</a></li>
+							<li><a href="阻止事件冒泡和默认事件.html">阻止事件冒泡和默认事件</a></li>
+								</ul>
+							</div>
+							<ol class="recommend_num">
+								<li class="one">1</li>
+								<li class="two">2</li>
+								<li class="three">3</li>
+								<li>4</li>
+								<li>5</li>
+								<li>6</li>
+							</ol>
+						</div><!-- recommend 结束 -->
+						<div class="hr_15"></div>
+						<div class="Tag-cloud">
+							<h4 class="shareside_title"><i class="fa fa-th-list"></i>标签云<small>Tag cloud</small></h4>
+							<ul class="clearfix">
+								<li><a href="#" title="3">HTML</a></li>
+								<li><a href="#" title="3">XML</a></li>
+								<li><a href="#" title="3">Ajax</a></li>
+								<li><a href="#" title="3">CSS3</a></li>
+								<li><a href="#" title="3">json</a></li>
+								<li><a href="#" title="3">mySQL</a></li>
+								<li><a href="#" title="3">前端</a></li>
+								<li><a href="#" title="3">SEO</a></li>
+								<li><a href="#" title="3">jQuery</a></li>
+								<li><a href="#" title="3">PHP</a></li>
+								<li><a href="#" title="3">cookie</a></li>
+								<li><a href="#" title="3">javascript</a></li>
+								<li><a href="#" title="3">node.js</a></li>
+								<li><a href="#" title="3">TCP协议</a></li>
+								<li><a href="#" title="3">Reactive</a></li>
+								<li><a href="#" title="3">bootstrap</a></li>
+								<li><a href="#" title="3">HTML5</a></li>
+								<li><a href="#" title="3">数据结构</a></li>
+								<li><a href="#" title="3">javascript</a></li>
+								<li><a href="#" title="3">sublime</a></li>
+								<li><a href="#" title="3">Less</a></li>
+								<li><a href="#" title="3">FireBug</a></li>
+							</ul>
+						</div><!-- Tag-cloud结束 -->
+						<div class="hr_15"></div>
+						<div class="friendship-link">
+							<h4 class="shareside_title"><i class="fa fa-share-square"></i>友情链接<small>Friendship Link</small></h4>
+							<ul clearfix>
+								<li><a href="http://www.duanliang920.com/">段亮博客</a></li>
+								<li><a href="http://www.yangqq.com/">杨青博客</a></li>
+								<li><a href="http://www.imooc.com/">慕课网</a></li>
+								<li><a href="http://www.moyu-edu.com/">墨鱼</a></li>
+								<li><a href="http://blog.853954.com/">熊海博客</a></li>
+							</ul>		
+						</div>
+					</div><!-- content_right结束 -->
+				</div><!-- 内容content结束 -->
+				<footer class="animated fadeInBottom"><!-- 页脚开始 -->
+					<ul class="share_group">
+						<a href="#" ><img src="image/github.svg" title="github"></a>
+						<a href="#"><img src="image/zhihu.svg" title="zhihu"></a>
+						<a href="#"><img src="image/weibo.svg" title="weibo"></a>
+						<a href="#"><img src="image/wechat.svg" title="wechat"></a>
+					</ul>
+					<div class="copyright">
+						CopyRight &copy; 陈明博客 2016-2017 Design By ChenMing
+					</div>
+				</footer><!-- 页脚结束 -->
+
+				<div class="mask"></div>
+				<div id="sidebar">
+					<ul>
+				<li><a href="index.html">首页</a></li>
+				<li><a href="articl1.html">Blog</a></li>
+				<li><a href="Viewport的深入了解.html">最新文章</a></li>
+				<li><a href="https://silentwars.github.io/MyResume">个人简历</a></li>
+			</ul>
+				</div>
+				<a href="#" class="back_to_top"><span class="fa fa-chevron-circle-up"></span></a>
+			</div>
+		</body>
+		<script src="js/jquery-2.1.1.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/myjquery.js"></script>
+		</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浅谈html5和html的区别</title>
+	<link rel="stylesheet" type="text/css" href="css/normallize.css"> 
+	<link rel="stylesheet" type="text/css" href="css/main.css"> 
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="header_wrapper articl">
+		<header class="animated fadeInTop"><!-- 页头开始 -->
+			<nav>
+				<div class="logo"><a href="index.html"><img src="image/阿呆喵.png"></a></div>
+				<div class="logo_menu" id="logo_menu"><a href="#" class="sidebar_trigger">MENU<i class="fa fa-bars"></i></a> </div>
+				<div class="hideLogo">
+					<ul>
+					<li><a href="https://silentwars.github.io/MyResume">个人简历</a></li>
+					<li><a href="Viewport的深入了解.html">最新文章</a></li>
+					<li><a href="articl1.html" >Blog</a></li>
+					<li><a href="index.html" id="active">首页</a></li>
+				</ul>
+				</div>
+			</nav>
+		</header><!-- 页头结束 -->
+		<div class="content clearfix"><!-- 内容开始 -->	
+			<div class="content_left animated fadeInLeft fl">
+				<div class="article_list_title">
+					<h4>浅谈html5和html的区别</h4>
+				</div>
+				<div class="hr_15"></div>
+				<div class="see_data">
+					<ul>
+						<li><a title="陈明2017-05-29发表"><i class="fa fa-clock-o"></i>2017-05-29</a></li>
+						<li><a href="#" title="作者:陈明"><i class="fa fa-user"></i>陈明</a></li>
+						<li><a href="#" title="已有0条评论"><i class="fa fa-commenting"></i>0</a></li>
+						<li><a href="#" title="已有5次浏览"><i class="fa fa-eye"></i>5</a></li>
+						<li class="li_right"><a href="#" title="查看分类"><i class="fa fa-bars"></i>HTML5、CSS3</a></li>
+					</ul>
+				</div>
+				<div class="hr_15"></div>
+				<div class="article_list_content">
+
+					<!-- <div class="detailed_content">
+						<img src="image/web-Front -end.jpg">
+					</div>	 -->
+					<h3>浅谈html5和html的区别</h3>
+					<p>最近看群里聊天聊得最火热的莫过于手机网站和html5这两个词。可能有人会问，这两者有什么关系呢？随着这移动互联网快速发展的时代，尤其是4G时代已经来临的时刻，加上微软对“XP系统”不提供更新补丁、维护的情况下“html5+css3”也逐渐的成为新一代web前端技术，手机网站也渐渐的成为一种趋势。</p>
+					<p><strong>什么是html5呢？</strong></p>
+					<p>html5最先由WHATWG(Web 超文本应用技术工作组)命名的一种超文本标记语言，随后和W3C的xhtml2.0(标准)相结合，产生现在最新一代的超文本标记语言。可以简单点理解成：HTML 5 ≈ HTML4.0+CSS3+JS+API。</p>
+					<p><strong>hmtl5和html的区别在哪里？</strong></p>
+					<p>我们现在web前端开发的静态网页，一般都是html4.0。同时是符合W3C的xhtml1.0规范来的。那么他们两者又有什么实质性的区别呢？</p>
+					<h4>1.在文档类型声明上</h4>
+					<p style="color:red;">HTML:</p>
+					<pre>
+	&lt;!DOCTYPE&nbsp;html&nbsp;PUBLIC&nbsp;&quot;-//W3C//DTD&nbsp;XHTML&nbsp;1.0&nbsp;Transitional//EN&quot;&nbsp;&quot;
+	http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+	&lt;html&nbsp;xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;</pre>
+	<p style="color:red;">HTML5:</p>
+	<pre>     &nbsp;&lt;!DOCTYPE&nbsp;html&gt;</pre>
+	<p>由这两者对比可见：在文档声明上，html有很长的一段代码，并且很难记住这段代码，想必很多人都是靠工具直接生成的吧？而html5却是不同，只有简简单单的声明，这也方便人们的记忆，更加精简。</p>
+	<h4>2.在结构语义上</h4>
+	<p>html4.0：没有体现结构语义化的标签，我们通常都是这样来命名的</p>
+	<pre>      &lt;divid=&quot;header&quot;&gt;&lt;/div&gt;</pre>
+	<p>这样表示网站的头部。</p>
+	<p>html5：在语义上却有很大的优势。提供了一些新的html5标签，比如:</p>
+	<pre>      &lt;header&gt;&nbsp;、&lt;nav&gt;、&lt;article&gt;、&lt;aside&gt;、&lt;footer&gt;..</pre>
+	<h4>3.强大的HTML5的新功能</h4>
+	<h4 style="padding:0;color:red;">（1）强大的绘图功能</h4>
+	<p>可能有些动画，或者图片，在html5可以通过强大的绘画功能，加上JS可以实现。而在html4.0却不行。</p>
+	<p>在HTML5中，有两个东西，是可以进行绘图的，我们一起来看看是哪两个神奇的玩意。</p>
+	<p style="color:red;font-weight: bold;">1.Canvas标签</p>
+
+    <p>Canvas 通过 JavaScript 来绘制 2D 图形，Canvas 是逐像素进行渲染的。</p>
+    <p>在Canvas 中，一旦图形被绘制完成，它就不会继续得到浏览器的关注。如果其位置发生变化，那么整个场景也需要重新绘制，包括任何或许已被图形覆盖的对象。</p>
+    <p style="color:red;font-weight: bold;">2.SVG</p>
+    <p>SVG 是一种使用 XML 描述 2D 图形的语言，SVG 基于 XML，这意味着 SVG DOM 中的每个元素都是可用的。您可以为某个元素附加 JavaScript 事件处理器。在 SVG 中，每个被绘制的图形均被视为对象。如果 SVG 对象的属性发生变化，那么浏览器能够自动重现图形。</p>
+    <p>与其他图像格式相比（比如 JPEG 和 GIF），使用 SVG 的优势在于：</p>
+    <p>（1）SVG 图像可通过文本编辑器来创建和修改</p>
+    <p>（2）SVG 图像可被搜索、索引、脚本化或压缩</p>
+    <p>（3）SVG 是可伸缩的</p>
+    <p>（4）SVG 图像可在任何的分辨率下被高质量地打印</p>
+    <p>（5）SVG 可在图像质量不下降的情况下被放大</p><br>
+    <p>那么都两者都可以用于绘图，我们一起来看看他们之间有何区别：</p>
+    <p style="font-weight: bold;">Canvas</p>
+        <p>1.依赖分辨率</p>
+        <p>2.不支持事件处理器</p>
+        <p>3.弱的文本渲染能力</p>
+        <p>4.能够以 .png 或 .jpg 格式保存结果图像</p>
+        <p>5.最适合图像密集型的游戏，其中的许多对象会被频繁重绘</p>
+    <p style="font-weight: bold;">SVG</p>
+        <p>1.不依赖分辨率</p>
+        <p>2.支持事件处理器</p>
+        <p>3.最适合带有大型渲染区域的应用程序（比如谷歌地图）</p>
+        <p>4.复杂度高会减慢渲染速度（任何过度使用 DOM 的应用都不快）</p>
+        <p>5.不适合游戏应用</p>
+    <h4 style="padding:0;color:red;">（2）新增视频标签</h4>
+    <p>可能在html4.0的时候，我们想要插入一段视频，还需要引用一长段的代码。但是在html5的情况下。我们只需要用于一个video标签即可。</p>
+    <p><img src="image/html5_img.jpg"></p>
+    <p>提供这样的标签有什么样的好处呢？</p>
+       <p><span style="color:red;">第一：</span>节省程序员写代码的时间。</p>
+       <p><span style="color:red;">第二：</span>我觉得最主要还是在SEO的优化上。</p>
+       <p>不管是我们自己来对网页模块命名，还是有这样的标签。因为做网站最终的目的只有一个，那就是盈利。想盈利的话，就只有通过SEO优化的技术，把你网站排名做上来，这样你的网站才有价值，且正是这一点，html5符合了这一点。为什么这么说呢？因为他定义的这些标签，更加有利于优化，蜘蛛能识别你。</p>
+       <p><span style="color:red;">总结：</span>虽然在前几年html5已经出来了，但是那时候因为不够成熟，时机不对，才没被兴起。在这互联网高速发展的时候，也是来临4G的时代。我们还不学习hml5+css3我们就out了！</p>
+       <p>本文由段亮个人博客原创出品</p>
+       <p>本文出处：<a href="http://www.duanliang920.com/learn/web/html5/230.html">http://www.duanliang920.com/learn/web/html5/230.html</a> </p>
+
+
+
+
+						<div class="article_list_link">
+							<ul class="reward_sharing">
+								<li><a href="#" title="打赏">打赏</a></li>
+								<li><a href="#" title="分享">分享</a></li>
+							</ul>
+							<ul class="list_link_lable">
+								<li><a href="#">HTML5</a></li>
+								<li><a href="#">HTML</a></li>
+							</ul>
+						</div>					
+					</div>
+					<div class="hr_15"></div>
+					<div class="upper_part">
+						<ul>
+							<li><i class="fa fa-arrow-up"></i><span>上一篇：</span><a href="阻止事件冒泡和默认事件.html">阻止事件冒泡和默认事件</a></li>
+							<li><i class="fa fa-arrow-down"></i><span>下一篇：</span><a href="一个网站的开发流程.html">一个网站的开发流程</a></li>
+						</ul>				
+					</div>
+					<div class="hr_15"></div>
+					<div class="related_like">
+						<h4 class="shareside_title"><i class="fa fa-heart"></i>您还喜欢<small>You also like</small></h4>
+					</div>
+					<div class="hr_15"></div>
+					<div class="related_like_list">
+						<ul class="clearfix">
+							<li><a href="阻止事件冒泡和默认事件.html"><img src="image/articl_img07.jpg"></a><a href="阻止事件冒泡和默认事件.html">阻止事件冒泡和默认事件</a></li>
+		                    <li><a href="HTML5和CSS3新增特性.html"><img src="image/articl_img05.jpg"></a><a href="HTML5和CSS3新增特性.html">HTML5和CSS3新增特性</a></li>
+		                    <li><a href="关于js修改标签的class属性及浏览器兼容性问题.html"><img src="image/articl_img08.png"></a><a href="关于js修改标签的class属性及浏览器兼容性问题">关于js修改标签的class属性及浏览器兼容性问题</a></li>
+		                    <li><a href="闭包简单理解.html"><img src="image/articl_img11.jpg"></a><a href="闭包简单理解.html">闭包简单理解</a></li>
+						</ul>
+					</div>
+					<div class="hr_15"></div>
+					<div class="comment">
+						<a href="#"><img src="image/comment.jpg"></a>
+						<form>
+							<div class="textarea-wrapper">
+								<textarea placeholder="说点什么吧...."></textarea>
+								<pre ></pre>
+							</div>
+							<div class="post-toolbar">
+								<div class="post-options"><span></span></div>
+								<button class="post-button" type="submit">发布</button>
+							</div>
+
+						</form>
+					</div>
+				</div><!-- content_left结束 -->
+				<div class="content_right animated fadeInRight fr">
+					<div class="shareside">
+						<h4 class="shareside_title"><i class="fa fa-heart"></i>关注我<small>Focus me</small></h4>
+						<div class="share_model">
+							<ul class="clearfix">
+								<li><a href="#" title="我的微博主页" class="link_sina"></a><span>新浪微博</span></li>
+								<li><a href="#" title="Qzone" class="link_qzone"></a><span>QQ空间</span></li>
+								<li id="link_share"><a href="#" title="分享" class="link_forward"></a><span>点击分享</span></li>
+								<li><a href="#" title="点击,关注我" class="link_focus"></a><span>关注我</span></li>
+							</ul>
+						</div>
+						<div class="share_link_list" id="share_link_list">
+							<i class="fa fa-close" id="fa-close"></i>
+							<ul class="clearfix">
+								<li><a href="#" class="share_link_weixin" title="分享到微信" ></a></li>
+								<li><a href="#" class="share_link_sina" title="分享到微博" ></a></li>
+								<li><a href="#" class="share_link_qzone" title="分享到QQ空间"></a></li>
+								<li><a href="#" class="share_link_baidubar" title="分享到百度贴吧"></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="hr_15"></div>
+					<div class="web-author">
+						<div class="author-tx">
+							<a href="#" title="点击查看详情"><img src="image/author.png"></a>
+						</div>
+						<div class="about-author">
+							<span style="color:#DAA91D;">陈  明</span><br>
+							<span style="font-size: 13px;color:#DAA91D;">走向web前端开发工师的路上</span>
+						</div>
+						<div class="data-info">
+							<ul class="clearfix">
+								<li><strong>60</strong><span>运行天数</span></li>
+								<li><strong>2</strong><span>今日访问ip</span></li>
+								<li><strong>8</strong><span>今日访客</span></li>
+							</ul>	
+						</div>
+					</div><!-- web-author结束 -->
+					<div class="hr_15"></div>
+					<form  class="search">
+						<div class="search-box clearfix">
+							<input type="text" placeholder="请输入关键字" onfocus="this.placeholder=''" onblur="this.placeholder='请输入关键字'" />
+							<button></button>
+							<i class="fa fa-search"></i>
+						</div>
+					</form>	
+					<div class="hr_15"></div>
+					<div class="close-new">
+						<h4><i class="fa fa-newspaper-o"></i>最近更新<small>Close New</small></h4>
+						<ul>
+							<li><span><i class="fa fa-sticky-note"></i>最近：<font>陈明</font>&nbsp;&nbsp;2017-06-27</span>&nbsp;&nbsp;<a href="#">更新了<b class="lable">文章</b></a></li>
+							<li><i class="fa fa-calendar"></i>历史上的今天：<a href="#" title="历史上的今天" class="orange-text">历史上的今天</a></li>
+							<li><i class="fa fa-clock-o"></i>2017年已经过去：<a href="#" title="2017年已经过去" class="orange-text"  id="downtime"></a></li>
+						</ul>
+					</div>
+					<div class="hr_15"></div>
+					<div class="recommend">
+						<h4 class="shareside_title"><i class="fa fa-tags"></i>热门推荐</h4>
+						<ul class="recommend_title clearfix">
+							<li class="re_active recommend_title_left">热门推荐</li>
+							<li class="recommend_title_right">最新文章</li>
+						</ul>
+						<div class="recommend_l">
+							<ul class="recommend_left">
+								<li><a href="GET和POST有什么区别？.html">GET和POST有什么区别？</a></li>
+							<li><a href="关于响应式布局.html">关于响应式布局</a></li>
+							<li><a href="HTML5和CSS3新增特性.html">HTML5和CSS3新增特性</a></li>
+							<li><a href="一个网站的开发流程.html">一个网站的开发流程</a></li>
+							<li><a href="闭包简单理解.html">闭包简单理解</a></li>
+							<li class="no_border"><a href="专业web前端人员应注意的几点细节.html">专业web前端人员应注意的几点细节</a></li>
+							</ul> 
+						</div>
+						<div class="recommend_r">
+							<ul  class="recommend_right">
+								<li><a href="GET和POST有什么区别？.html">GET和POST有什么区别？</a></li>
+							<li><a href="闭包简单理解.html">闭包简单理解</a></li>
+							<li><a href="关于响应式布局.html">关于响应式布局</a></li>
+							<li><a href="web前端工程师学习路径.html">web前端工程师学习路径</a></li>
+							<li class="no_border"><a href="浅谈html5和html的区别.html">浅谈html5和html的区别</a></li>
+							<li><a href="阻止事件冒泡和默认事件.html">阻止事件冒泡和默认事件</a></li>
+							</ul>
+						</div>
+						<ol class="recommend_num">
+							<li class="one">1</li>
+							<li class="two">2</li>
+							<li class="three">3</li>
+							<li>4</li>
+							<li>5</li>
+							<li>6</li>
+						</ol>
+					</div><!-- recommend 结束 -->
+					<div class="hr_15"></div>
+					<div class="Tag-cloud">
+						<h4 class="shareside_title"><i class="fa fa-th-list"></i>标签云<small>Tag cloud</small></h4>
+						<ul class="clearfix">
+							<li><a href="#" title="3">HTML</a></li>
+							<li><a href="#" title="3">XML</a></li>
+							<li><a href="#" title="3">Ajax</a></li>
+							<li><a href="#" title="3">CSS3</a></li>
+							<li><a href="#" title="3">json</a></li>
+							<li><a href="#" title="3">mySQL</a></li>
+							<li><a href="#" title="3">前端</a></li>
+							<li><a href="#" title="3">SEO</a></li>
+							<li><a href="#" title="3">jQuery</a></li>
+							<li><a href="#" title="3">PHP</a></li>
+							<li><a href="#" title="3">cookie</a></li>
+							<li><a href="#" title="3">javascript</a></li>
+							<li><a href="#" title="3">node.js</a></li>
+							<li><a href="#" title="3">TCP协议</a></li>
+							<li><a href="#" title="3">Reactive</a></li>
+							<li><a href="#" title="3">bootstrap</a></li>
+							<li><a href="#" title="3">HTML5</a></li>
+							<li><a href="#" title="3">数据结构</a></li>
+							<li><a href="#" title="3">javascript</a></li>
+							<li><a href="#" title="3">sublime</a></li>
+							<li><a href="#" title="3">Less</a></li>
+							<li><a href="#" title="3">FireBug</a></li>
+						</ul>
+					</div><!-- Tag-cloud结束 -->
+					<div class="hr_15"></div>
+					<div class="friendship-link">
+						<h4 class="shareside_title"><i class="fa fa-share-square"></i>友情链接<small>Friendship Link</small></h4>
+						<ul clearfix>
+							<li><a href="http://www.duanliang920.com/">段亮博客</a></li>
+							<li><a href="http://www.yangqq.com/">杨青博客</a></li>
+							<li><a href="http://www.imooc.com/">慕课网</a></li>
+							<li><a href="http://www.moyu-edu.com/">墨鱼</a></li>
+							<li><a href="http://blog.853954.com/">熊海博客</a></li>
+						</ul>		
+					</div>
+				</div><!-- content_right结束 -->
+			</div><!-- 内容content结束 -->
+			<footer class="animated fadeInBottom"><!-- 页脚开始 -->
+				<ul class="share_group">
+					<a href="#" ><img src="image/github.svg" title="github"></a>
+					<a href="#"><img src="image/zhihu.svg" title="zhihu"></a>
+					<a href="#"><img src="image/weibo.svg" title="weibo"></a>
+					<a href="#"><img src="image/wechat.svg" title="wechat"></a>
+				</ul>
+				<div class="copyright">
+					CopyRight &copy; 陈明博客 2016-2017 Design By ChenMing
+				</div>
+			</footer><!-- 页脚结束 -->
+
+			<div class="mask"></div>
+			<div id="sidebar">
+				<ul>
+				<li><a href="index.html">首页</a></li>
+				<li><a href="articl1.html">Blog</a></li>
+				<li><a href="Viewport的深入了解.html">最新文章</a></li>
+				<li><a href="https://silentwars.github.io/MyResume">个人简历</a></li>
+			</ul>
+			</div>
+			<a href="#" class="back_to_top"><span class="fa fa-chevron-circle-up"></span></a>
+		</div>
+	</body>
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/myjquery.js"></script>
+	</html>

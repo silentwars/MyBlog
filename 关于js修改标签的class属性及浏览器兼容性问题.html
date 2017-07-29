@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>关于js修改标签的class属性及浏览器兼容性问题</title>
+	<link rel="stylesheet" type="text/css" href="css/normallize.css"> 
+	<link rel="stylesheet" type="text/css" href="css/main.css"> 
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="header_wrapper articl">
+		<header class="animated fadeInTop"><!-- 页头开始 -->
+			<nav>
+				<div class="logo"><a href="index.html"><img src="image/阿呆喵.png"></a></div>
+				<div class="logo_menu" id="logo_menu"><a href="#" class="sidebar_trigger">MENU<i class="fa fa-bars"></i></a> </div>
+				<div class="hideLogo">
+					<ul>
+					<li><a href="https://silentwars.github.io/MyResume">个人简历</a></li>
+					<li><a href="Viewport的深入了解.html">最新文章</a></li>
+					<li><a href="articl1.html" >Blog</a></li>
+					<li><a href="index.html" id="active">首页</a></li>
+				</ul>
+				</div>
+			</nav>
+		</header><!-- 页头结束 -->
+		<div class="content clearfix"><!-- 内容开始 -->	
+			<div class="content_left animated fadeInLeft fl">
+				<div class="article_list_title">
+					<h4>关于js修改标签的class属性及浏览器兼容性问题</h4>
+				</div>
+				<div class="hr_15"></div>
+				<div class="see_data">
+					<ul>
+						<li><a title="陈明2017-05-10发表"><i class="fa fa-clock-o"></i>2017-05-10</a></li>
+						<li><a href="#" title="作者:陈明"><i class="fa fa-user"></i>陈明</a></li>
+						<li><a href="#" title="已有0条评论"><i class="fa fa-commenting"></i>0</a></li>
+						<li><a href="#" title="已有5次浏览"><i class="fa fa-eye"></i>5</a></li>
+						<li class="li_right"><a href="#" title="查看分类"><i class="fa fa-bars"></i>前端设计</a></li>
+					</ul>
+				</div>
+				<div class="hr_15"></div>
+				<div class="article_list_content">
+					<p>由于class属于JavaScript保留值，因此当我们要操作元素的class属性值时，直接使用obj.getAttribute('class')和obj.setAttribute('class', 'value')可能会遭遇浏览器兼容性问题。</p>
+					<div class="detailed_content">
+						<img src="image/class标签.jpg">
+					</div>	
+					<p>W3C DOM标准为每个节点提供了一个可读写的className属性，作为节点class属性的映射，标准浏览器的都提供了这一属性的支持，因此，可以使用e.className访问元素的class属性值，也可对该属性进行重新斌值。而IE和Opera中也可使用e.getAttribute('className')和e.setAttribute('className', 'value')访问及修改class属性值。相比之下，e.className是W3C DOM标准，仍然是兼容性最强的解决办法。</p>
+					<h4>以下列表说明了上文提及的三种做法的浏览器兼容性测试：</h4>
+					<p>e.className 能在IE、Mozilla(Firefox)、Opera和Safari正确运行
+						e.getAttribute('class')和e.setAttribute('class', 'value') 能在Mozilla(Firefox)和Opera中正确运行，在IE和Safari中则不能使用。
+						e.getAttribute('className') 在IE和Opera中正确运行，在Mozilla(Firefox)和Safari中则不能使用。</p>
+						<p>转载：http://blog.csdn.net/shantang1984/article/details/1614512</p>
+						<div class="article_list_link">
+							<ul class="reward_sharing">
+								<li><a href="#" title="打赏">打赏</a></li>
+								<li><a href="#" title="分享">分享</a></li>
+							</ul>
+							<ul class="list_link_lable">
+								<li><a href="#">编程开发</a></li>
+								<li><a href="#">js</a></li>
+								<li><a href="#">className</a></li>
+							</ul>
+						</div>					
+					</div>
+					<div class="hr_15"></div>
+					<div class="upper_part">
+						<ul>
+							<li><i class="fa fa-arrow-up"></i><span>上一篇：</span><a href="HTML5和CSS3新增特性.html">HTML5和CSS3新增特性</a></li>
+							<li><i class="fa fa-arrow-down"></i><span>下一篇：</span><a href="js事件委托.html">js事件委托</a></li>
+						</ul>				
+					</div>
+					<div class="hr_15"></div>
+					<div class="related_like">
+						<h4 class="shareside_title"><i class="fa fa-heart"></i>您还喜欢<small>You also like</small></h4>
+					</div>
+					<div class="hr_15"></div>
+					<div class="related_like_list">
+						<ul class="clearfix">
+						<li><a href="浅谈html5和html的区别.html"><img src="image/articl_img04.jpg"></a><a href="浅谈html5和html的区别.html">浅谈html5和html的区别</a></li>
+						<li><a href="js事件委托.html"><img src="image/articl_img06.jpg"></a><a href="js事件委托.html">js事件委托</a></li>						
+						<li><a href="阻止事件冒泡和默认事件.html"><img src="image/articl_img07.jpg"></a><a href="阻止事件冒泡和默认事件">阻止事件冒泡和默认事件</a></li>
+						<li><a href="关于响应式布局.html"><img src="image/articl_img10.png"></a><a href="关于响应式布局.html">关于响应式布局</a></li>
+						</ul>
+					</div>
+					<div class="hr_15"></div>
+					<div class="comment">
+						<a href="#"><img src="image/comment.jpg"></a>
+						<form>
+							<div class="textarea-wrapper">
+								<textarea placeholder="说点什么吧...."></textarea>
+								<pre ></pre>
+							</div>
+							<div class="post-toolbar">
+								<div class="post-options"><span></span></div>
+								<button class="post-button" type="submit">发布</button>
+							</div>
+
+						</form>
+					</div>
+				</div><!-- content_left结束 -->
+				<div class="content_right animated fadeInRight fr">
+					<div class="shareside">
+						<h4 class="shareside_title"><i class="fa fa-heart"></i>关注我<small>Focus me</small></h4>
+						<div class="share_model">
+							<ul class="clearfix">
+								<li><a href="#" title="我的微博主页" class="link_sina"></a><span>新浪微博</span></li>
+								<li><a href="#" title="Qzone" class="link_qzone"></a><span>QQ空间</span></li>
+								<li id="link_share"><a href="#" title="分享" class="link_forward"></a><span>点击分享</span></li>
+								<li><a href="#" title="点击,关注我" class="link_focus"></a><span>关注我</span></li>
+							</ul>
+						</div>
+						<div class="share_link_list" id="share_link_list">
+							<i class="fa fa-close" id="fa-close"></i>
+							<ul class="clearfix">
+								<li><a href="#" class="share_link_weixin" title="分享到微信" ></a></li>
+								<li><a href="#" class="share_link_sina" title="分享到微博" ></a></li>
+								<li><a href="#" class="share_link_qzone" title="分享到QQ空间"></a></li>
+								<li><a href="#" class="share_link_baidubar" title="分享到百度贴吧"></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="hr_15"></div>
+					<div class="web-author">
+						<div class="author-tx">
+							<a href="#" title="点击查看详情"><img src="image/author.png"></a>
+						</div>
+						<div class="about-author">
+							<span style="color:#DAA91D;">陈  明</span><br>
+							<span style="font-size: 13px;color:#DAA91D;">走向web前端开发工师的路上</span>
+						</div>
+						<div class="data-info">
+							<ul class="clearfix">
+								<li><strong>106</strong><span>运行天数</span></li>
+								<li><strong>2</strong><span>今日访问ip</span></li>
+								<li><strong>89</strong><span>今日访客</span></li>
+							</ul>	
+						</div>
+					</div><!-- web-author结束 -->
+					<div class="hr_15"></div>
+					<form  class="search">
+						<div class="search-box clearfix">
+							<input type="text" placeholder="请输入关键字" onfocus="this.placeholder=''" onblur="this.placeholder='请输入关键字'" />
+							<button></button>
+							<i class="fa fa-search"></i>
+						</div>
+					</form>	
+					<div class="hr_15"></div>
+					<div class="close-new">
+						<h4><i class="fa fa-newspaper-o"></i>最近更新<small>Close New</small></h4>
+						<ul>
+							<li><span><i class="fa fa-sticky-note"></i>最近：<font>陈明</font>&nbsp;&nbsp;2017-06-27</span>&nbsp;&nbsp;<a href="#">更新了<b class="lable">文章</b></a></li>
+							<li><i class="fa fa-calendar"></i>历史上的今天：<a href="#" title="历史上的今天" class="orange-text">历史上的今天</a></li>
+							<li><i class="fa fa-clock-o"></i>2017年已经过去：<a href="#" title="2017年已经过去" class="orange-text"  id="downtime"></a></li>
+						</ul>
+					</div>
+					<div class="hr_15"></div>
+					<div class="recommend">
+						<h4 class="shareside_title"><i class="fa fa-tags"></i>热门推荐</h4>
+						<ul class="recommend_title clearfix">
+							<li class="re_active recommend_title_left">热门推荐</li>
+							<li class="recommend_title_right">最新文章</li>
+						</ul>
+						<div class="recommend_l">
+							<ul class="recommend_left">
+								<li><a href="GET和POST有什么区别？.html">GET和POST有什么区别？</a></li>
+							<li><a href="关于响应式布局.html">关于响应式布局</a></li>
+							<li><a href="HTML5和CSS3新增特性.html">HTML5和CSS3新增特性</a></li>
+							<li><a href="一个网站的开发流程.html">一个网站的开发流程</a></li>
+							<li><a href="闭包简单理解.html">闭包简单理解</a></li>
+							<li class="no_border"><a href="专业web前端人员应注意的几点细节.html">专业web前端人员应注意的几点细节</a></li>
+							</ul> 
+						</div>
+						<div class="recommend_r">
+							<ul  class="recommend_right">
+								<li><a href="GET和POST有什么区别？.html">GET和POST有什么区别？</a></li>
+							<li><a href="闭包简单理解.html">闭包简单理解</a></li>
+							<li><a href="关于响应式布局.html">关于响应式布局</a></li>
+							<li><a href="web前端工程师学习路径.html">web前端工程师学习路径</a></li>
+							<li class="no_border"><a href="浅谈html5和html的区别.html">浅谈html5和html的区别</a></li>
+							<li><a href="阻止事件冒泡和默认事件.html">阻止事件冒泡和默认事件</a></li>
+							</ul>
+						</div>
+						<ol class="recommend_num">
+							<li class="one">1</li>
+							<li class="two">2</li>
+							<li class="three">3</li>
+							<li>4</li>
+							<li>5</li>
+							<li>6</li>
+						</ol>
+					</div><!-- recommend 结束 -->
+					<div class="hr_15"></div>
+					<div class="Tag-cloud">
+						<h4 class="shareside_title"><i class="fa fa-th-list"></i>标签云<small>Tag cloud</small></h4>
+						<ul class="clearfix">
+							<li><a href="#" title="3">HTML</a></li>
+							<li><a href="#" title="3">XML</a></li>
+							<li><a href="#" title="3">Ajax</a></li>
+							<li><a href="#" title="3">CSS3</a></li>
+							<li><a href="#" title="3">json</a></li>
+							<li><a href="#" title="3">mySQL</a></li>
+							<li><a href="#" title="3">前端</a></li>
+							<li><a href="#" title="3">SEO</a></li>
+							<li><a href="#" title="3">jQuery</a></li>
+							<li><a href="#" title="3">PHP</a></li>
+							<li><a href="#" title="3">cookie</a></li>
+							<li><a href="#" title="3">javascript</a></li>
+							<li><a href="#" title="3">node.js</a></li>
+							<li><a href="#" title="3">TCP协议</a></li>					
+							<li><a href="#" title="3">Reactive</a></li>
+							<li><a href="#" title="3">bootstrap</a></li>
+							<li><a href="#" title="3">HTML5</a></li>
+							<li><a href="#" title="3">数据结构</a></li>
+							<li><a href="#" title="3">javascript</a></li>
+							<li><a href="#" title="3">sublime</a></li>
+							<li><a href="#" title="3">Less</a></li>
+							<li><a href="#" title="3">FireBug</a></li>
+						</ul>
+					</div><!-- Tag-cloud结束 -->
+					<div class="hr_15"></div>
+					<div class="friendship-link">
+						<h4 class="shareside_title"><i class="fa fa-share-square"></i>友情链接<small>Friendship Link</small></h4>
+						<ul clearfix>
+							<li><a href="http://www.duanliang920.com/">段亮博客</a></li>
+							<li><a href="http://www.yangqq.com/">杨青博客</a></li>
+							<li><a href="http://www.imooc.com/">慕课网</a></li>
+							<li><a href="http://www.moyu-edu.com/">墨鱼</a></li>
+							<li><a href="http://blog.853954.com/">熊海博客</a></li>
+						</ul>		
+					</div>
+				</div><!-- content_right结束 -->
+			</div><!-- 内容content结束 -->
+			<footer class="animated fadeInBottom"><!-- 页脚开始 -->
+				<ul class="share_group">
+					<a href="#" ><img src="image/github.svg" title="github"></a>
+					<a href="#"><img src="image/zhihu.svg" title="zhihu"></a>
+					<a href="#"><img src="image/weibo.svg" title="weibo"></a>
+					<a href="#"><img src="image/wechat.svg" title="wechat"></a>
+				</ul>
+				<div class="copyright">
+					CopyRight &copy; 陈明博客 2016-2017 Design By ChenMing
+				</div>
+			</footer><!-- 页脚结束 -->
+
+			<div class="mask"></div>
+			<div id="sidebar">
+				<ul>
+				<li><a href="index.html">首页</a></li>
+				<li><a href="articl1.html">Blog</a></li>
+				<li><a href="Viewport的深入了解.html">最新文章</a></li>
+				<li><a href="https://silentwars.github.io/MyResume">个人简历</a></li>
+			</ul>
+			</div>
+			<a href="#" class="back_to_top"><span class="fa fa-chevron-circle-up"></span></a>
+		</div>
+	</body>
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/myjquery.js"></script>
+	</html>

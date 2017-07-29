@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>关于响应式布局</title>
+	<link rel="stylesheet" type="text/css" href="css/normallize.css"> 
+	<link rel="stylesheet" type="text/css" href="css/main.css"> 
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="header_wrapper articl">
+		<header class="animated fadeInTop"><!-- 页头开始 -->
+			<nav>
+				<div class="logo"><a href="index.html"><img src="image/阿呆喵.png"></a></div>
+				<div class="logo_menu" id="logo_menu"><a href="#" class="sidebar_trigger">MENU<i class="fa fa-bars"></i></a> </div>
+				<div class="hideLogo">
+					<ul>
+					<li><a href="https://silentwars.github.io/MyResume">个人简历</a></li>
+					<li><a href="Viewport的深入了解.html">最新文章</a></li>
+					<li><a href="articl1.html" >Blog</a></li>
+					<li><a href="index.html" id="active">首页</a></li>
+				</ul>
+				</div>
+			</nav>
+		</header><!-- 页头结束 -->
+		<div class="content clearfix"><!-- 内容开始 -->	
+			<div class="content_left animated fadeInLeft fl">
+				<div class="article_list_title">
+					<h4>关于响应式布局</h4>
+				</div>
+				<div class="hr_15"></div>
+				<div class="see_data">
+					<ul>
+						<li><a title="陈明2017-05-22发表"><i class="fa fa-clock-o"></i>2017-05-22</a></li>
+						<li><a href="#" title="作者:陈明"><i class="fa fa-user"></i>陈明</a></li>
+						<li><a href="#" title="已有0条评论"><i class="fa fa-commenting"></i>0</a></li>
+						<li><a href="#" title="已有5次浏览"><i class="fa fa-eye"></i>5</a></li>
+						<li class="li_right"><a href="#" title="查看分类"><i class="fa fa-bars"></i>响应式布局</a></li>
+					</ul>
+				</div>
+				<div class="hr_15"></div>
+				<div class="article_list_content">
+
+					<!-- <div class="detailed_content">
+						<img src="image/web-Front -end.jpg">
+					</div>	 -->
+					<div class="content">
+						<p style="text-indent: 2em; text-align: left;">随着互联网的快速发展，以及html5+css3的迅速崛起。渐渐的响应式布局，也会慢慢的出现在我们的视野里，身为专业的web前端人员，还不学习新技术你就out啦！为什么这样说呢？因为响应式布局能同时兼容多个终端，比如（手机、平板、PC）做一个网站转眼间就可以变成3个网站，和现在相比是不是更加具有优势呢!</p><p style="text-indent: 2em; text-align: left;">可能有些人对“<strong><span style="color:#ff0000">什么是响应式布局</span></strong>”还不是很了解，下面就跟大家简单说下什么是响应式布局：</p><p style="text-indent: 2em; text-align: left;">响应式布局：简单点说，就是做一个网站同时能兼容多个终端，由一个网站转变成多个网站，为我们大大节省了资源。</p><p style="text-indent: 2em; text-align: left;">那么响应式布局的优点和缺点又有哪些呢？</p><p style="text-indent: 2em; text-align: left;"><span style="color:#ff0000">优点：</span>1.面对不同分辨率设备灵活性强</p><p style="text-indent: 2em; text-align: left;"><span style="text-indent:2em;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2.能够快捷解决多设备显示适应问题</span></p><p style="text-indent: 2em; text-align: left;"><span style="color:#ff0000">缺点：</span>不能完全兼容所有浏览器，代码累赘，加载时间加长。</p><p style="text-indent: 2em; text-align: left;">说了这么多，可能还有很多人，不明白响应式布局该怎么去做，以及它的开发原理是什么？</p><p style="text-indent: 2em; text-align: left;"><span style="color:#ff0000">原理：</span>简单点说响应式布局它是通过CSS中Media Query（媒介查询）@media功能，来判断我们的终端设备宽度在多少像素内，然后就执行与之对应的CSS样式。</p><p style="text-indent: 2em; text-align: left;">下面我就以我最近做的一个简单的<strong>响应式布局框架</strong>为案列给大家讲讲：</p><p style="text-indent: 2em; text-align: left;">代码如下：</p>
+						<pre style="font-family:Helvetica,Arial,'宋体',sans-serif;font-weight: bold;">
+    &lt;!DOCTYPE&nbsp;html&gt;
+       &lt;html&gt;
+       &lt;head&gt;
+       &lt;meta&nbsp;charset=&quot;gb2312&quot;&gt;
+       &lt;title&gt;响应式布局&lt;/title&gt;
+       &lt;meta&nbsp;name=&quot;keywords&quot;&nbsp;content=&quot;&quot;&nbsp;/&gt;
+       &lt;meta&nbsp;name=&quot;description&quot;&nbsp;content=&quot;&quot;&nbsp;/&gt;
+       &lt;meta&nbsp;name=&quot;viewport&quot;&nbsp;content=&quot;width=device-width,&nbsp;initial-scale=1.0&quot;&gt;
+       &lt;style&gt;
+          *{margin:0;padding:0;text-decoration:none;list-style:none;
+          &nbsp;font-size:14px;font-family:&quot;微软雅黑&quot;;text-align:center;
+          &nbsp;color:#fff;}
+          &nbsp;.clear{clear:both;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#header,#content,#footer{margin:0&nbsp;auto;margin-top:10px;}&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#header,#footer{margin-top:10px;height:100px;}
+         &nbsp;#header,#footer,.left,.right,.center{background:#333;}
+	   /*通用样式*/
+          &nbsp;/*手机*/
+	  @media&nbsp;screen&nbsp;and&nbsp;(max-width:600px){
+       &nbsp;&nbsp;&nbsp;#header,#content,#footer{width:400px;}
+       &nbsp;&nbsp;&nbsp;.right,.center{margin-top:10px;}
+       &nbsp;&nbsp;&nbsp;.left,.right{height:100px;}
+       &nbsp;&nbsp;&nbsp;.center{height:200px;}
+            }
+	  /*平板*/
+          @media&nbsp;screen&nbsp;and&nbsp;(min-width:600px)&nbsp;and&nbsp;(max-width:960px){
+      &nbsp;&nbsp;&nbsp;&nbsp;#header,#content,#footer{width:600px;}
+          .right{display:none;}
+          .left,.center{height:400px;float:left;}
+          .left{width:160px;margin-right:10px;}
+          .center{width:430px;}
+	}
+	  /*PC*/
+          @media&nbsp;screen&nbsp;and&nbsp;(min-width:960px){
+	  #header,#content,#footer{width:960px;}
+          .left,.center,.right{height:400px;float:left;}
+          .left{width:200px;margin-right:10px;}
+          .center{width:540px;margin-right:10px;}
+          .right{width:200px;}&nbsp;
+			}
+      &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+          &lt;!--header&nbsp;start--&gt;
+            &lt;div&nbsp;id=&quot;header&quot;&gt;header&lt;/div&gt;
+          &lt;!--end&nbsp;header--&gt;
+          &lt;!--content&nbsp;start--&gt;
+             &lt;div&nbsp;id=&quot;content&quot;&gt;
+             &lt;div&gt;left&lt;/div&gt;
+             &lt;div&gt;center&lt;/div&gt;
+             &lt;div&gt;right&lt;/div&gt;
+             &lt;div&gt;&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;!--end&nbsp;content--&gt;
+          &lt;!--footer--&gt;
+             &lt;div&nbsp;id=&quot;footer&quot;&gt;footer&lt;/div&gt;
+          &lt;!--end&nbsp;footer--&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;</pre></div>
+  <p style="text-indent: 2em; text-align: left;">通过上面代码可知：它是通过@media媒介查询判断来执行的CSS样式，也就是说：如果我要做一个响应式布局网站，同时兼容手机、平板、PC的话就得写三个与之对应的CSS样式，通过@media媒介查询来完成响应式布局。</p>
+  <p style="text-indent: 2em; text-align: left;">值得<span style="color:#ff0000">注意</span>的是：在手机设备上，我们要禁止用户来缩放屏幕。不禁止的话，可能在显示上会造成错位，以及显示的不是手机网站的样式。所以，我们要通过代码来禁止用户在手机端上缩放屏幕，已达到正常的手机网站效果。</p>
+  <p style="text-indent: 2em; text-align: left;">禁止代码如下:</p>
+  <table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter  html"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="html plain">&lt;</code><code class="html keyword">metaname</code><code class="html plain">=“viewport”&nbsp;content=“</code><code class="html color1">width</code><code class="html plain">=</code><code class="html string">device</code><code class="html plain">-width;&nbsp;</code><code class="html color1">initial-scale</code><code class="html plain">=</code><code class="html string">1</code><code class="html plain">.0”&gt;</code></div></div></td></tr></tbody></table>
+  <p style="text-indent: 2em; text-align: left;"><span style="margin: 0px; padding: 0px; color: rgb(26, 25, 25); line-height: 28px; text-indent: 32px; background-color: rgb(255, 252, 252);"><meta name="“viewport”" content="“width=device-width;" initial-scale="1.0”"></span></p>
+  <p style="text-indent: 2em; text-align: left;">加在头部标签里</p>
+  <p style="text-indent: 2em; text-align: left;"><span style="color:#ff0000">写在最后：</span>以上纯属个人对响应式布局的理解，随着技术的更新，我们还不学习一些新技术，那么等待我们的就是淘汰。</p>
+  <p style="text-indent: 2em; text-align: left;">本文由段亮博客原创出品</p>
+  <p style="text-indent: 2em; text-align: left;">本文出处：<a href="http://www.duanliang920.com/learn/web/html5/252.html">http://www.duanliang920.com/learn/web/html5/252.html</a></p>
+			<div class="article_list_link">
+				<ul class="reward_sharing">
+					<li><a href="#" title="打赏">打赏</a></li>
+					<li><a href="#" title="分享">分享</a></li>
+				</ul>
+				<ul class="list_link_lable">
+					<li><a href="#">HTML5</a></li>
+					<li><a href="#">CSS3</a></li>
+					<li><a href="#">响应式布局</a></li>
+				</ul>
+			</div>					
+		</div>
+		<div class="hr_15"></div>
+		<div class="upper_part">
+			<ul>
+				<li><i class="fa fa-arrow-up"></i><span>上一篇：</span><a href="一个网站的开发流程.html">一个网站的开发流程</a></li>
+				<li><i class="fa fa-arrow-down"></i><span>下一篇：</span><a href="闭包简单理解.html">闭包简单理解</a></li>
+			</ul>				
+		</div>
+		<div class="hr_15"></div>
+		<div class="related_like">
+			<h4 class="shareside_title"><i class="fa fa-heart"></i>您还喜欢<small>You also like</small></h4>
+		</div>
+		<div class="hr_15"></div>
+		<div class="related_like_list">
+			<ul class="clearfix">
+				<li><a href="一个网站的开发流程.html"><img src="image/articl_img09.jpg"></a><a href="一个网站的开发流程.html">一个网站的开发流程</a></li>
+		        <li><a href="阻止事件冒泡和默认事件.html"><img src="image/articl_img07.jpg"></a><a href="阻止事件冒泡和默认事件.html">阻止事件冒泡和默认事件</a></li>
+		        <li><a href="HTML5和CSS3新增特性.html"><img src="image/articl_img04.jpg"></a><a href="HTML5和CSS3新增特性">HTML5和CSS3新增特性</a></li>
+		        <li><a href="GET和POST有什么区别？.html"><img src="image/articl_img12.jpg"></a><a href="GET和POST有什么区别？.html">GET和POST有什么区别？</a></li>
+			</ul>
+		</div>
+		<div class="hr_15"></div>
+		<div class="comment">
+			<a href="#"><img src="image/comment.jpg"></a>
+			<form>
+				<div class="textarea-wrapper">
+					<textarea placeholder="说点什么吧...."></textarea>
+					<pre ></pre>
+				</div>
+				<div class="post-toolbar">
+					<div class="post-options"><span></span></div>
+					<button class="post-button" type="submit">发布</button>
+				</div>
+
+			</form>
+		</div>
+	</div><!-- content_left结束 -->
+	<div class="content_right animated fadeInRight fr">
+		<div class="shareside">
+			<h4 class="shareside_title"><i class="fa fa-heart"></i>关注我<small>Focus me</small></h4>
+			<div class="share_model">
+				<ul class="clearfix">
+					<li><a href="#" title="我的微博主页" class="link_sina"></a><span>新浪微博</span></li>
+					<li><a href="#" title="Qzone" class="link_qzone"></a><span>QQ空间</span></li>
+					<li id="link_share"><a href="#" title="分享" class="link_forward"></a><span>点击分享</span></li>
+					<li><a href="#" title="点击,关注我" class="link_focus"></a><span>关注我</span></li>
+				</ul>
+			</div>
+			<div class="share_link_list" id="share_link_list">
+				<i class="fa fa-close" id="fa-close"></i>
+				<ul class="clearfix">
+					<li><a href="#" class="share_link_weixin" title="分享到微信" ></a></li>
+					<li><a href="#" class="share_link_sina" title="分享到微博" ></a></li>
+					<li><a href="#" class="share_link_qzone" title="分享到QQ空间"></a></li>
+					<li><a href="#" class="share_link_baidubar" title="分享到百度贴吧"></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="hr_15"></div>
+		<div class="web-author">
+			<div class="author-tx">
+				<a href="#" title="点击查看详情"><img src="image/author.png"></a>
+			</div>
+			<div class="about-author">
+				<span style="color:#DAA91D;">陈  明</span><br>
+				<span style="font-size: 13px;color:#DAA91D;">走向web前端开发工师的路上</span>
+			</div>
+			<div class="data-info">
+				<ul class="clearfix">
+					<li><strong>60</strong><span>运行天数</span></li>
+					<li><strong>2</strong><span>今日访问ip</span></li>
+					<li><strong>8</strong><span>今日访客</span></li>
+				</ul>	
+			</div>
+		</div><!-- web-author结束 -->
+		<div class="hr_15"></div>
+		<form  class="search">
+			<div class="search-box clearfix">
+				<input type="text" placeholder="请输入关键字" onfocus="this.placeholder=''" onblur="this.placeholder='请输入关键字'" />
+				<button></button>
+				<i class="fa fa-search"></i>
+			</div>
+		</form>	
+		<div class="hr_15"></div>
+		<div class="close-new">
+			<h4><i class="fa fa-newspaper-o"></i>最近更新<small>Close New</small></h4>
+			<ul>
+				<li><span><i class="fa fa-sticky-note"></i>最近：<font>陈明</font>&nbsp;&nbsp;2017-06-27</span>&nbsp;&nbsp;<a href="#">更新了<b class="lable">文章</b></a></li>
+				<li><i class="fa fa-calendar"></i>历史上的今天：<a href="#" title="历史上的今天" class="orange-text">历史上的今天</a></li>
+				<li><i class="fa fa-clock-o"></i>2017年已经过去：<a href="#" title="2017年已经过去" class="orange-text"  id="downtime"></a></li>
+			</ul>
+		</div>
+		<div class="hr_15"></div>
+		<div class="recommend">
+			<h4 class="shareside_title"><i class="fa fa-tags"></i>热门推荐</h4>
+			<ul class="recommend_title clearfix">
+				<li class="re_active recommend_title_left">热门推荐</li>
+				<li class="recommend_title_right">最新文章</li>
+			</ul>
+			<div class="recommend_l">
+				<ul class="recommend_left">
+					<li><a href="GET和POST有什么区别？.html">GET和POST有什么区别？</a></li>
+							<li><a href="关于响应式布局.html">关于响应式布局</a></li>
+							<li><a href="HTML5和CSS3新增特性.html">HTML5和CSS3新增特性</a></li>
+							<li><a href="一个网站的开发流程.html">一个网站的开发流程</a></li>
+							<li><a href="闭包简单理解.html">闭包简单理解</a></li>
+							<li class="no_border"><a href="专业web前端人员应注意的几点细节.html">专业web前端人员应注意的几点细节</a></li>
+				</ul> 
+			</div>
+			<div class="recommend_r">
+				<ul  class="recommend_right">
+					<li><a href="GET和POST有什么区别？.html">GET和POST有什么区别？</a></li>
+							<li><a href="闭包简单理解.html">闭包简单理解</a></li>
+							<li><a href="关于响应式布局.html">关于响应式布局</a></li>
+							<li><a href="web前端工程师学习路径.html">web前端工程师学习路径</a></li>
+							<li class="no_border"><a href="浅谈html5和html的区别.html">浅谈html5和html的区别</a></li>
+							<li><a href="阻止事件冒泡和默认事件.html">阻止事件冒泡和默认事件</a></li>
+				</ul>
+			</div>
+			<ol class="recommend_num">
+				<li class="one">1</li>
+				<li class="two">2</li>
+				<li class="three">3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+			</ol>
+		</div><!-- recommend 结束 -->
+		<div class="hr_15"></div>
+		<div class="Tag-cloud">
+			<h4 class="shareside_title"><i class="fa fa-th-list"></i>标签云<small>Tag cloud</small></h4>
+			<ul class="clearfix">
+				<li><a href="#" title="3">HTML</a></li>
+				<li><a href="#" title="3">XML</a></li>
+				<li><a href="#" title="3">Ajax</a></li>
+				<li><a href="#" title="3">CSS3</a></li>
+				<li><a href="#" title="3">json</a></li>
+				<li><a href="#" title="3">mySQL</a></li>
+				<li><a href="#" title="3">前端</a></li>
+				<li><a href="#" title="3">SEO</a></li>
+				<li><a href="#" title="3">jQuery</a></li>
+				<li><a href="#" title="3">PHP</a></li>
+				<li><a href="#" title="3">cookie</a></li>
+				<li><a href="#" title="3">javascript</a></li>
+				<li><a href="#" title="3">node.js</a></li>
+				<li><a href="#" title="3">TCP协议</a></li>
+				<li><a href="#" title="3">Reactive</a></li>
+				<li><a href="#" title="3">bootstrap</a></li>
+				<li><a href="#" title="3">HTML5</a></li>
+				<li><a href="#" title="3">数据结构</a></li>
+				<li><a href="#" title="3">javascript</a></li>
+				<li><a href="#" title="3">sublime</a></li>
+				<li><a href="#" title="3">Less</a></li>
+				<li><a href="#" title="3">FireBug</a></li>
+			</ul>
+		</div><!-- Tag-cloud结束 -->
+		<div class="hr_15"></div>
+		<div class="friendship-link">
+			<h4 class="shareside_title"><i class="fa fa-share-square"></i>友情链接<small>Friendship Link</small></h4>
+			<ul clearfix>
+				<li><a href="http://www.duanliang920.com/">段亮博客</a></li>
+				<li><a href="http://www.yangqq.com/">杨青博客</a></li>
+				<li><a href="http://www.imooc.com/">慕课网</a></li>
+				<li><a href="http://www.moyu-edu.com/">墨鱼</a></li>
+				<li><a href="http://blog.853954.com/">熊海博客</a></li>
+			</ul>		
+		</div>
+	</div><!-- content_right结束 -->
+</div><!-- 内容content结束 -->
+<footer class="animated fadeInBottom"><!-- 页脚开始 -->
+	<ul class="share_group">
+		<a href="#" ><img src="image/github.svg" title="github"></a>
+		<a href="#"><img src="image/zhihu.svg" title="zhihu"></a>
+		<a href="#"><img src="image/weibo.svg" title="weibo"></a>
+		<a href="#"><img src="image/wechat.svg" title="wechat"></a>
+	</ul>
+	<div class="copyright">
+		CopyRight &copy; 陈明博客 2016-2017 Design By ChenMing
+	</div>
+</footer><!-- 页脚结束 -->
+
+<div class="mask"></div>
+<div id="sidebar">
+	<ul>
+				<li><a href="index.html">首页</a></li>
+				<li><a href="articl1.html">Blog</a></li>
+				<li><a href="Viewport的深入了解.html">最新文章</a></li>
+				<li><a href="https://silentwars.github.io/MyResume">个人简历</a></li>
+			</ul>
+</div>
+<a href="#" class="back_to_top"><span class="fa fa-chevron-circle-up"></span></a>
+</div>
+</body>
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/main.js"></script>
+<script src="js/myjquery.js"></script>
+</html>

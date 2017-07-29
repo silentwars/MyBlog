@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Viewport的深入了解</title>
+	<link rel="stylesheet" type="text/css" href="css/normallize.css"> 
+	<link rel="stylesheet" type="text/css" href="css/main.css"> 
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="header_wrapper articl">
+		<header class="animated fadeInTop"><!-- 页头开始 -->
+			<nav>
+				<div class="logo"><a href="index.html"><img src="image/阿呆喵.png"></a></div>
+				<div class="logo_menu" id="logo_menu"><a href="#" class="sidebar_trigger">MENU<i class="fa fa-bars"></i></a> </div>
+				<div class="hideLogo">
+					<ul>
+					<li><a href="https://silentwars.github.io/MyResume">个人简历</a></li>
+					<li><a href="Viewport的深入了解.html">最新文章</a></li>
+					<li><a href="articl1.html" >Blog</a></li>
+					<li><a href="index.html" id="active">首页</a></li>
+				</ul>
+				</div>
+			</nav>
+		</header><!-- 页头结束 -->
+		<div class="content clearfix"><!-- 内容开始 -->	
+			<div class="content_left animated fadeInLeft fl">
+				<div class="article_list_title">
+					<h4>Viewport的深入了解</h4>
+				</div>
+				<div class="hr_15"></div>
+				<div class="see_data">
+					<ul>
+						<li><a title="陈明2017-07-23发表"><i class="fa fa-clock-o"></i>2017-07-23</a></li>
+						<li><a href="#" title="作者:陈明"><i class="fa fa-user"></i>陈明</a></li>
+						<li><a href="#" title="已有0条评论"><i class="fa fa-commenting"></i>0</a></li>
+						<li><a href="#" title="已有5次浏览"><i class="fa fa-eye"></i>5</a></li>
+						<li class="li_right"><a href="#" title="查看分类"><i class="fa fa-bars"></i>对象</a></li>
+					</ul>
+				</div>
+				<div class="hr_15"></div>
+				<div class="article_list_content">
+
+					<!-- <div class="detailed_content">
+						<img src="image/web-Front -end.jpg">
+					</div>	 -->
+					<h3>Viewport的深入了解</h3>
+					
+					<p>刚接触移动端网页开发，之前不知带要设置页面缩放属性，导致正常字体小的出奇，这次对viewport进一步深入学习。</p>
+					<h4>viewport定义</h4>
+					<p>就像英文字面翻译一样，能看得到的区域。viewport指的是显示网页的区域。但是因为viewport按特性可以分为三类，所以viewport又不仅仅是浏览器可视区域那么大。</p>
+					<p>譬如一般移动端浏览器显示屏宽度都是320px 480px等。但是移动设备的viewport默认宽度是980px或者1024px。这个值可以自己设置。</p>				
+					<h4>物理像素与CSS像素的区别与联系 </h4>
+					<p>在桌面浏览器中，CSS的1px是等于屏幕上的1个物理像素的。 但是在移动设备中可就不一定，譬如Retina屏，一个CSS像素相当于两个物理像素。</p>
+					<h4>屏幕尺寸和像素尺寸的区别与联系</h4>
+					<p>屏幕的尺寸和像素尺寸不是一样的 譬如ipone3和iphone4都是320px的宽屏。但是前者像素是320px，后者采用retina屏，像素是640px。</p>
+					<p>安卓设备也是一样，根据像素密度分为ldpi，mdpi，hdpi，xhdpi等不同等级。</p>
+					<h4>用户缩放导致CSS像素与物理像素的比值差异 </h4>
+					<p> 如果用户把页面放大一倍，首先，屏幕尺寸是不会变的，1个CSS像素如果以前相当于一个物理像素，此时，就相当于两个物理像素了，那么我们看到的景象就是字体什么的放大了。</p>
+					<h4>viewport按表现类型分三类</h4>
+					<p>layout viewport 大于浏览器可视区域宽度</p>
+					<p>visual biewport 浏览器可视区域宽度</p>
+					<p>ideal viewport 完美适配移动端屏幕的宽度</p>
+					<p>只要在CSS中把某一元素的宽度设置为ideal viewport的宽度，那么这个元素的宽度就是设备屏幕的宽度。</p>
+					<h4>利用meta元标签对viewport进行控制</h4>
+					<p>移动设备默认的是layout viewport。但是进行移动设备网站开发时，我们需要ideal viewport。</p>
+					<pre>    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, 
+     user-scalable=0&quot;&gt;</pre>
+                    <p>这个标签的作用就是让当前页面的宽度等于设备的宽度，不允许手动缩放。</p>
+                    <h4>meta viewport的6个属性</h4>
+                    <p>width：设置layout viewport的宽度。可以使整数，也可以设置为width-device。当设置为width-device时，自动适配屏幕宽度。</p>
+                    <p>height：设置layout viewport的高度。</p>
+                    <p>initial-scale：设置页面加载时的缩放值，可以是小数。相对于ideal-viewport值进行缩放。</p>
+                    <p>minimum-scale：允许用户的最小缩放值。</p>
+                    <p>maximum-scale：允许用户的最大缩放值。</p>
+                    <p>user-scalable：是否允许用户手动缩放。 值为’yes’ or ‘no’。</p>
+                    <p>经证明：</p>
+                    <p>可以让大部分的移动端设备的viewport设置为ideal viewport。</p>
+
+					
+					<div class="article_list_link">
+						<ul class="reward_sharing">
+							<li><a href="#" title="打赏">打赏</a></li>
+							<li><a href="#" title="分享">分享</a></li>
+						</ul>
+						<ul class="list_link_lable">
+							<li><a href="#">web</a></li>
+							<li><a href="#">前端</a></li>
+							<li><a href="#">javascript</a></li>
+						</ul>
+					</div>					
+				</div>
+				<div class="hr_15"></div>
+				<div class="upper_part">
+					<ul>
+						<li><i class="fa fa-arrow-up"></i><span>上一篇：</span><a href="什么是对象，为什么要面向对象，怎么才能面向对象？.html">什么是对象，为什么要面向对象，怎么才能面向对象？</a></li>
+						<!-- <li><i class="fa fa-arrow-down"></i><span>下一篇：</span><a href="#">关于js修改标签的class属性及浏览器兼容性问题</a></li> -->
+					</ul>				
+				</div>
+				<div class="hr_15"></div>
+				<div class="related_like">
+					<h4 class="shareside_title"><i class="fa fa-heart"></i>您还喜欢<small>You also like</small></h4>
+				</div>
+				<div class="hr_15"></div>
+				<div class="related_like_list">
+					<ul class="clearfix">
+						<li><a href="闭包简单理解.html"><img src="image/articl_img11.jpg"></a><a href="闭包简单理解.html">闭包简单理解</a></li>
+						<li><a href="阻止事件冒泡和默认事件.html"><img src="image/articl_img07.jpg"></a><a href="阻止事件冒泡和默认事件.html">阻止事件冒泡和默认事件</a></li>
+						<li><a href="HTML5和CSS3新增特性.html"><img src="image/articl_img04.jpg"></a><a href="HTML5和CSS3新增特性">HTML5和CSS3新增特性</a></li>
+						<li><a href="一个网站的开发流程.html"><img src="image/articl_img09.jpg"></a><a href="一个网站的开发流程.html">一个网站的开发流程</a></li>
+					</ul>
+				</div>
+				<div class="hr_15"></div>
+				<div class="comment">
+					<a href="#"><img src="image/comment.jpg"></a>
+					<form>
+						<div class="textarea-wrapper">
+							<textarea placeholder="说点什么吧...."></textarea>
+							<pre ></pre>
+						</div>
+						<div class="post-toolbar">
+							<div class="post-options"><span></span></div>
+							<button class="post-button" type="submit">发布</button>
+						</div>
+
+					</form>
+				</div>
+			</div><!-- content_left结束 -->
+			<div class="content_right animated fadeInRight fr">
+				<div class="shareside">
+					<h4 class="shareside_title"><i class="fa fa-heart"></i>关注我<small>Focus me</small></h4>
+					<div class="share_model">
+						<ul class="clearfix">
+							<li><a href="#" title="我的微博主页" class="link_sina"></a><span>新浪微博</span></li>
+							<li><a href="#" title="Qzone" class="link_qzone"></a><span>QQ空间</span></li>
+							<li id="link_share"><a href="#" title="分享" class="link_forward"></a><span>点击分享</span></li>
+							<li><a href="#" title="点击,关注我" class="link_focus"></a><span>关注我</span></li>
+						</ul>
+					</div>
+					<div class="share_link_list" id="share_link_list">
+						<i class="fa fa-close" id="fa-close"></i>
+						<ul class="clearfix">
+							<li><a href="#" class="share_link_weixin" title="分享到微信" ></a></li>
+							<li><a href="#" class="share_link_sina" title="分享到微博" ></a></li>
+							<li><a href="#" class="share_link_qzone" title="分享到QQ空间"></a></li>
+							<li><a href="#" class="share_link_baidubar" title="分享到百度贴吧"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="hr_15"></div>
+				<div class="web-author">
+					<div class="author-tx">
+						<a href="#" title="点击查看详情"><img src="image/author.png"></a>
+					</div>
+					<div class="about-author">
+						<span style="color:#DAA91D;">陈  明</span><br>
+						<span style="font-size: 13px;color:#DAA91D;">走向web前端开发工师的路上</span>
+					</div>
+					<div class="data-info">
+						<ul class="clearfix">
+							<li><strong>60</strong><span>运行天数</span></li>
+							<li><strong>2</strong><span>今日访问ip</span></li>
+							<li><strong>8</strong><span>今日访客</span></li>
+						</ul>	
+					</div>
+				</div><!-- web-author结束 -->
+				<div class="hr_15"></div>
+				<form  class="search">
+					<div class="search-box clearfix">
+						<input type="text" placeholder="请输入关键字" onfocus="this.placeholder=''" onblur="this.placeholder='请输入关键字'" />
+						<button></button>
+						<i class="fa fa-search"></i>
+					</div>
+				</form>	
+				<div class="hr_15"></div>
+				<div class="close-new">
+					<h4><i class="fa fa-newspaper-o"></i>最近更新<small>Close New</small></h4>
+					<ul>
+						<li><span><i class="fa fa-sticky-note"></i>最近：<font>陈明</font>&nbsp;&nbsp;2017-06-27</span>&nbsp;&nbsp;<a href="#">更新了<b class="lable">文章</b></a></li>
+						<li><i class="fa fa-calendar"></i>历史上的今天：<a href="#" title="历史上的今天" class="orange-text">历史上的今天</a></li>
+						<li><i class="fa fa-clock-o"></i>2017年已经过去：<a href="#" title="2017年已经过去" class="orange-text"  id="downtime"></a></li>
+					</ul>
+				</div>
+				<div class="hr_15"></div>
+				<div class="recommend">
+					<h4 class="shareside_title"><i class="fa fa-tags"></i>热门推荐</h4>
+					<ul class="recommend_title clearfix">
+						<li class="re_active recommend_title_left">热门推荐</li>
+						<li class="recommend_title_right">最新文章</li>
+					</ul>
+					<div class="recommend_l">
+						<ul class="recommend_left">
+							<li><a href="GET和POST有什么区别？.html">GET和POST有什么区别？</a></li>
+							<li><a href="关于响应式布局.html">关于响应式布局</a></li>
+							<li><a href="HTML5和CSS3新增特性.html">HTML5和CSS3新增特性</a></li>
+							<li><a href="一个网站的开发流程.html">一个网站的开发流程</a></li>
+							<li><a href="闭包简单理解.html">闭包简单理解</a></li>
+							<li class="no_border"><a href="专业web前端人员应注意的几点细节.html">专业web前端人员应注意的几点细节</a></li>
+						</ul> 
+					</div>
+					<div class="recommend_r">
+						<ul  class="recommend_right">
+							<li><a href="GET和POST有什么区别？.html">GET和POST有什么区别？</a></li>
+							<li><a href="闭包简单理解.html">闭包简单理解</a></li>
+							<li><a href="关于响应式布局.html">关于响应式布局</a></li>
+							<li><a href="web前端工程师学习路径.html">web前端工程师学习路径</a></li>
+							<li class="no_border"><a href="浅谈html5和html的区别.html">浅谈html5和html的区别</a></li>
+							<li><a href="阻止事件冒泡和默认事件.html">阻止事件冒泡和默认事件</a></li>
+						</ul>
+					</div>
+					<ol class="recommend_num">
+						<li class="one">1</li>
+						<li class="two">2</li>
+						<li class="three">3</li>
+						<li>4</li>
+						<li>5</li>
+						<li>6</li>
+					</ol>
+				</div><!-- recommend 结束 -->
+				<div class="hr_15"></div>
+				<div class="Tag-cloud">
+					<h4 class="shareside_title"><i class="fa fa-th-list"></i>标签云<small>Tag cloud</small></h4>
+					<ul class="clearfix">
+						<li><a href="#" title="3">HTML</a></li>
+						<li><a href="#" title="3">XML</a></li>
+						<li><a href="#" title="3">Ajax</a></li>
+						<li><a href="#" title="3">CSS3</a></li>
+						<li><a href="#" title="3">json</a></li>
+						<li><a href="#" title="3">mySQL</a></li>
+						<li><a href="#" title="3">前端</a></li>
+						<li><a href="#" title="3">SEO</a></li>
+						<li><a href="#" title="3">jQuery</a></li>
+						<li><a href="#" title="3">PHP</a></li>
+						<li><a href="#" title="3">cookie</a></li>
+						<li><a href="#" title="3">javascript</a></li>
+						<li><a href="#" title="3">node.js</a></li>
+						<li><a href="#" title="3">TCP协议</a></li>
+						<li><a href="#" title="3">Reactive</a></li>
+						<li><a href="#" title="3">bootstrap</a></li>
+						<li><a href="#" title="3">HTML5</a></li>
+						<li><a href="#" title="3">数据结构</a></li>
+						<li><a href="#" title="3">javascript</a></li>
+						<li><a href="#" title="3">sublime</a></li>
+						<li><a href="#" title="3">Less</a></li>
+						<li><a href="#" title="3">FireBug</a></li>
+					</ul>
+				</div><!-- Tag-cloud结束 -->
+				<div class="hr_15"></div>
+				<div class="friendship-link">
+					<h4 class="shareside_title"><i class="fa fa-share-square"></i>友情链接<small>Friendship Link</small></h4>
+					<ul clearfix>
+						<li><a href="http://www.duanliang920.com/">段亮博客</a></li>
+						<li><a href="http://www.yangqq.com/">杨青博客</a></li>
+						<li><a href="http://www.imooc.com/">慕课网</a></li>
+						<li><a href="http://www.moyu-edu.com/">墨鱼</a></li>
+						<li><a href="http://blog.853954.com/">熊海博客</a></li>
+					</ul>		
+				</div>
+			</div><!-- content_right结束 -->
+		</div><!-- 内容content结束 -->
+		<footer class="animated fadeInBottom"><!-- 页脚开始 -->
+			<ul class="share_group">
+				<a href="#" ><img src="image/github.svg" title="github"></a>
+				<a href="#"><img src="image/zhihu.svg" title="zhihu"></a>
+				<a href="#"><img src="image/weibo.svg" title="weibo"></a>
+				<a href="#"><img src="image/wechat.svg" title="wechat"></a>
+			</ul>
+			<div class="copyright">
+				CopyRight &copy; 陈明博客 2016-2017 Design By ChenMing
+			</div>
+		</footer><!-- 页脚结束 -->
+
+		<div class="mask"></div>
+		<div id="sidebar">
+			<ul>
+				<li><a href="index.html">首页</a></li>
+				<li><a href="articl1.html">Blog</a></li>
+				<li><a href="Viewport的深入了解.html">最新文章</a></li>
+				<li><a href="https://silentwars.github.io/MyResume">个人简历</a></li>
+			</ul>
+		</div>
+		<a href="#" class="back_to_top"><span class="fa fa-chevron-circle-up"></span></a>
+	</div>
+</body>
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/main.js"></script>
+<script src="js/myjquery.js"></script>
+</html>

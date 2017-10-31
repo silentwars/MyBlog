@@ -21,7 +21,7 @@ h3{text-align:center;}
 ul{list-style: none;}
 
 /*背景图片dog*/
-.header_wrapper{min-width:1340px;background: #444 url(../image/banner.jpg);background-repeat: no-repeat;background-attachment: fixed;background-size: cover;background-position: center center;}
+.header_wrapper{min-width:1440px;background: #444 url(../image/banner.jpg);background-repeat: no-repeat;background-attachment: fixed;background-size: cover;background-position: center center;}
 
 /*给header设置透明度,让header-wrapper的背景图片实现相关效果*/
 header{background: rgba(0,0,0,0.4);}
